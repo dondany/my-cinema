@@ -1,1 +1,16 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  // @apply bg-gradient-to-b from-zinc-800 to-zinc-950;
+  @apply bg-zinc-950;
+  // width: 1920px;
+  height: 100vh;
+  font-family: Montserrat;
+}
