@@ -5,63 +5,75 @@
       "title": "The Godfather",
       "duration": "2h 55m",
       "genre": "Drama, Crime",
-      "poster": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/3bhkrj58Vtu7enYsRolD1fZdja1.jpg"
+      "poster": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/3bhkrj58Vtu7enYsRolD1fZdja1.jpg",
+      "status": "on-screen"
     },
     {
       "id": "2",
       "title": "The Godfather Part II",
       "duration": "3h 22m",
       "genre": "Drama, Crime",
-      "poster": "https://m.media-amazon.com/images/M/MV5BMWMwMGQzZTItY2JlNC00OWZiLWIyMDctNDk2ZDQ2YjRjMWQ0XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_FMjpg_UY2552_.jpg"
+      "poster": "https://m.media-amazon.com/images/M/MV5BMWMwMGQzZTItY2JlNC00OWZiLWIyMDctNDk2ZDQ2YjRjMWQ0XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_FMjpg_UY2552_.jpg",
+      "status": "on-screen"
     },
     {
       "id": "3",
       "title": "The Godfather Part III",
       "duration": "2h 44m",
       "genre": "Drama, Crime",
-      "poster": "https://m.media-amazon.com/images/M/MV5BNWFlYWY2YjYtNjdhNi00MzVlLTg2MTMtMWExNzg4NmM5NmEzXkEyXkFqcGdeQXVyMDk5Mzc5MQ@@._V1_FMjpg_UY6000_.jpg"
+      "poster": "https://m.media-amazon.com/images/M/MV5BNWFlYWY2YjYtNjdhNi00MzVlLTg2MTMtMWExNzg4NmM5NmEzXkEyXkFqcGdeQXVyMDk5Mzc5MQ@@._V1_FMjpg_UY6000_.jpg",
+      "status": "on-screen"
     },
     {
       "id": "4",
       "title": "The Mask",
       "duration": "1h 41m",
       "genre": "Comedy",
-      "poster": "https://m.media-amazon.com/images/M/MV5BOWExYjI5MzktNTRhNi00Nzg2LThkZmQtYWVkYjRlYWI2MDQ4XkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_FMjpg_UX1009_.jpg"
+      "poster": "https://m.media-amazon.com/images/M/MV5BOWExYjI5MzktNTRhNi00Nzg2LThkZmQtYWVkYjRlYWI2MDQ4XkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_FMjpg_UX1009_.jpg",
+      "status": "on-screen"
     },
     {
       "id": "5",
       "title": "The Shawshank Redemption",
       "duration": "2h 22m",
       "genre": "Drama, Crime",
-      "poster": "https://m.media-amazon.com/images/M/MV5BNDE3ODcxYzMtY2YzZC00NmNlLWJiNDMtZDViZWM2MzIxZDYwXkEyXkFqcGdeQXVyNjAwNDUxODI@._V1_FMjpg_UX1200_.jpg"
+      "poster": "https://m.media-amazon.com/images/M/MV5BNDE3ODcxYzMtY2YzZC00NmNlLWJiNDMtZDViZWM2MzIxZDYwXkEyXkFqcGdeQXVyNjAwNDUxODI@._V1_FMjpg_UX1200_.jpg",
+      "status": "on-screen"
     },
     {
       "id": "6",
       "title": "Forrest Gump",
       "duration": "2h 22m",
       "genre": "Comedy, Drama",
-      "poster": "https://m.media-amazon.com/images/M/MV5BNWIwODRlZTUtY2U3ZS00Yzg1LWJhNzYtMmZiYmEyNmU1NjMzXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_FMjpg_UX558_.jpg"
+      "poster": "https://m.media-amazon.com/images/M/MV5BNWIwODRlZTUtY2U3ZS00Yzg1LWJhNzYtMmZiYmEyNmU1NjMzXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_FMjpg_UX558_.jpg",
+      "status": "on-screen"
     },
     {
       "id": "7",
       "title": "The Truman Show",
       "duration": "1h 43m",
       "genre": "Comedy, Drama",
-      "poster": "https://m.media-amazon.com/images/M/MV5BMDIzODcyY2EtMmY2MC00ZWVlLTgwMzAtMjQwOWUyNmJjNTYyXkEyXkFqcGdeQXVyNDk3NzU2MTQ@._V1_FMjpg_UY2500_.jpg"
+      "poster": "https://m.media-amazon.com/images/M/MV5BMDIzODcyY2EtMmY2MC00ZWVlLTgwMzAtMjQwOWUyNmJjNTYyXkEyXkFqcGdeQXVyNDk3NzU2MTQ@._V1_FMjpg_UY2500_.jpg",
+      "status": "coming-soon",
+      "premiere": "June 5"
     },
     {
       "id": "8",
       "title": "Inglourious Basterds",
       "duration": "2h 33m",
       "genre": "Drama, War",
-      "poster": "https://m.media-amazon.com/images/M/MV5BOTJiNDEzOWYtMTVjOC00ZjlmLWE0NGMtZmE1OWVmZDQ2OWJhXkEyXkFqcGdeQXVyNTIzOTk5ODM@._V1_FMjpg_UY3000_.jpg"
+      "poster": "https://m.media-amazon.com/images/M/MV5BOTJiNDEzOWYtMTVjOC00ZjlmLWE0NGMtZmE1OWVmZDQ2OWJhXkEyXkFqcGdeQXVyNTIzOTk5ODM@._V1_FMjpg_UY3000_.jpg",
+      "status": "coming-soon",
+      "premiere": "August 21"
     },
     {
       "id": "8",
       "title": "The Age of Adaline",
       "duration": "1h 52m",
       "genre": "Fantasy, Romance, Drama",
-      "poster": "https://m.media-amazon.com/images/M/MV5BMTAzMTQzMTA2MjheQTJeQWpwZ15BbWU4MDk2MTg2MzUx._V1_FMjpg_UY2048_.jpg"
+      "poster": "https://m.media-amazon.com/images/M/MV5BMTAzMTQzMTA2MjheQTJeQWpwZ15BbWU4MDk2MTg2MzUx._V1_FMjpg_UY2048_.jpg",
+      "status": "coming-soon",
+      "premiere": "April 24"
     }
   ]
 }
