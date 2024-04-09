@@ -22,7 +22,7 @@ export const MovieStore = signalStore(
   }),
   withMethods((store, movieService = inject(MovieService)) => {
     return {
-        loadMovies: rxMethod<void>(
+      loadMovies: rxMethod<void>(
         pipe(
           switchMap(() => movieService.getMovies()),
           tap(movies => patchState(store, { movies }))
