@@ -1,6 +1,8 @@
 import { Component, computed, input, signal } from '@angular/core';
-import { Schedule } from '../../../../shared/model/schedule';
+import { Schedule, Screening } from '../../../../shared/model/schedule';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
+import { MinutesToHoursPipe } from '../../../../shared/pipes/minutes-to-hours.pipe';
 
 @Component({
   standalone: true,
@@ -23,7 +25,7 @@ import { CommonModule } from '@angular/common';
               <path
                 d="M464 256A208 208 0 1 1 48 256a208 208 0 1 1 416 0zM0 256a256 256 0 1 0 512 0A256 256 0 1 0 0 256zM232 120V256c0 8 4 15.5 10.7 20l96 64c11 7.4 25.9 4.4 33.3-6.7s4.4-25.9-6.7-33.3L280 243.2V120c0-13.3-10.7-24-24-24s-24 10.7-24 24z" />
             </svg>
-            <span>{{ schedule().movie.duration }}</span>
+            <span>{{ schedule().movie.runtime | minutesToHours }}</span>
           </div>
           <span>|</span>
           <span>{{ schedule().movie.genre }}</span>
@@ -61,21 +63,31 @@ import { CommonModule } from '@angular/common';
           <span>Buy ticket online</span>
         }
         <div class="w-full mt-auto flex gap-3">
-          @for (screening of screenings(); track $index) {
-            <button
-              class="p-2 w-20 flex justify-center rounded border cursor-pointer
+          @for (entry of screeningsByRoom(); track $index) {
+            <div class="bg-slate-800/60 rounded flex items-center gap-3 p-2">
+              <div class="">{{ entry[0] }}</div>
+              @for (screening of entry[1]; track $index) {
+                <a
+                  class="p-2 w-20 flex justify-center rounded border cursor-pointer
               border-emerald-400 hover:bg-emerald-400
               transition-color duration-300">
-              <span class="text-lg text-white">{{
-                screening.time | date: 'H:mm'
-              }}</span>
-            </button>
+                  <!-- <a
+              class="p-2 w-20 flex justify-center rounded border cursor-pointer
+              border-emerald-400 hover:bg-emerald-400
+              transition-color duration-300"
+              [routerLink]="[schedule().id, screening.id, 'booking']"> -->
+                  <span class="text-lg text-white">{{
+                    screening.startTime | date: 'H:mm'
+                  }}</span>
+                </a>
+              }
+            </div>
           }
         </div>
       </div>
     </div>
   </div>`,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink, MinutesToHoursPipe],
 })
 export class ScheduleItemComponent {
   schedule = input.required<Schedule>();
@@ -84,9 +96,23 @@ export class ScheduleItemComponent {
 
   screenings = computed(() => {
     return this.schedule().screenings.filter(screen => {
-      console.log(typeof screen.time);
-      return screen.time.getDate() === this.currentDay().getDate();
+      console.log(typeof screen.startTime);
+      return screen.startTime.getDate() === this.currentDay().getDate();
     });
+  });
+
+  screeningsByRoom = computed(() => {
+    const screeningsMap = new Map<string, Screening[]>();
+
+    this.screenings().forEach(screening => {
+      const { roomName } = screening;
+      if (!screeningsMap.has(roomName)) {
+        screeningsMap.set(roomName, []);
+      }
+      screeningsMap.get(roomName)!.push(screening);
+    });
+
+    return screeningsMap;
   });
 
   isCurrentDay(day: Date) {

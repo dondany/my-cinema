@@ -1,16 +1,17 @@
-import { Component, input } from '@angular/core';
+import { Component, input, computed } from '@angular/core';
 import { Movie } from '../../../../shared/model/movie';
 import { CommonModule } from '@angular/common';
+import { MinutesToHoursPipe } from '../../../../shared/pipes/minutes-to-hours.pipe';
 
 @Component({
   standalone: true,
   selector: 'app-movie-item',
   template: ` <div>
     <div class="w-52 h-72 relative shadow-2xl shadow-zinc-200/20">
-      @if (movie().status === 'coming-soon') {
+      @if (movie().state === 'COMING_SOON') {
         <span
           class="absolute z-20 p-2 -left-2 top-4 bg-emerald-500 text-white uppercase font-semibold">
-          {{ movie().premiere }}</span
+          {{ movie().releaseDate | date: 'MMMM d' }}</span
         >
       }
       <div
@@ -20,7 +21,7 @@ import { CommonModule } from '@angular/common';
         <div
           class="size-full flex flex-col justify-center items-center
                       opacity-0 transition-opacity duration-500 group-hover:opacity-100">
-          @if (movie().status === 'on-screen') {
+          @if (movie().state === 'ON_SCREEN') {
             <button
               class="mt-auto px-4 py-2 rounded border-2 font-semibold 
                       border-emerald-400 bg-zinc-900/50 hover:bg-zinc-900/80">
@@ -30,7 +31,7 @@ import { CommonModule } from '@angular/common';
 
           <button
             class="fill-emerald-400 flex items-center gap-1"
-            [ngClass]="{ 'mt-auto': movie().status === 'on-screen' }">
+            [ngClass]="{ 'mt-auto': movie().state === 'ON_SCREEN' }">
             <svg
               class="size-10"
               xmlns="http://www.w3.org/2000/svg"
@@ -55,13 +56,17 @@ import { CommonModule } from '@angular/common';
     <div class="py-4 flex flex-col">
       <span class="font-semibold">{{ movie().title }}</span>
       <div class="flex justify-between text-sm text-zinc-400">
-        <span>{{ movie().duration }}</span>
-        <span>{{ movie().genre }}</span>
+        <span>{{ movie().runtime | minutesToHours }}</span>
+        <span> {{ genres() }}</span>
       </div>
     </div>
   </div>`,
-  imports: [CommonModule],
+  imports: [CommonModule, MinutesToHoursPipe],
 })
 export class MovieItemComponent {
   movie = input.required<Movie>();
+
+  genres = computed(() => {
+    return this.movie().genre.join(', ');
+  });
 }

@@ -25,6 +25,7 @@ export const MovieStore = signalStore(
       loadMovies: rxMethod<void>(
         pipe(
           switchMap(() => movieService.getMovies()),
+          tap(r => console.log(r)),
           tap(movies => patchState(store, { movies }))
         )
       ),
@@ -32,10 +33,10 @@ export const MovieStore = signalStore(
   }),
   withComputed(store => ({
     onScreenMovies: computed(() => {
-      return store.movies().filter(movie => movie.status === 'on-screen');
+      return store.movies().filter(movie => movie.state === 'ON_SCREEN');
     }),
     comingSoonMovies: computed(() => {
-      return store.movies().filter(movie => movie.status === 'coming-soon');
+      return store.movies().filter(movie => movie.state === 'COMING_SOON');
     }),
   }))
 );
